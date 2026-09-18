@@ -10,8 +10,6 @@ import {
 
 const TOKEN_KEY = 'supabase.dashboard.auth.token';
 
-/** Test seam for tool contract tests; production calls use globalThis.fetch. */
-export const fetchImpl: typeof fetch = (...args) => globalThis.fetch(...args);
 const NAMESPACE = 'supabase';
 
 interface SupabaseAuth {
@@ -79,7 +77,7 @@ export const api = async <T>(
 
   let response: Response;
   try {
-    response = await fetchImpl(url, {
+    response = await fetch(url, {
       method: options.method ?? 'GET',
       headers,
       body: fetchBody,
