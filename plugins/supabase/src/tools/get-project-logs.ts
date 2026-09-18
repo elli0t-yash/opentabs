@@ -11,14 +11,7 @@ const LOG_SOURCE_MAP = {
   postgrest: 'postgrest_logs',
 } as const;
 
-const logSourceSchema = z.enum([
-  'postgres',
-  'auth',
-  'realtime',
-  'storage',
-  'edge-functions',
-  'postgrest',
-]);
+const logSourceSchema = z.enum(['postgres', 'auth', 'realtime', 'storage', 'edge-functions', 'postgrest']);
 
 export const getProjectLogs = defineTool({
   name: 'get_project_logs',

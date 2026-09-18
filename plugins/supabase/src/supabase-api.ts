@@ -9,7 +9,6 @@ import {
 } from '@opentabs-dev/plugin-sdk';
 
 const TOKEN_KEY = 'supabase.dashboard.auth.token';
-
 const NAMESPACE = 'supabase';
 
 interface SupabaseAuth {
